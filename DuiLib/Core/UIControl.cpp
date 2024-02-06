@@ -937,6 +937,36 @@ namespace DuiLib {
 		m_mCustomAttrHash.Resize();
 	}
 
+    CDuiString CControlUI::GetAttribute(LPCTSTR pstrName)
+    {
+        LPCTSTR pstrValue;
+
+        if (_tcscmp(pstrName, _T("pos")) == 0) {}
+        else if (_tcscmp(pstrName, _T("text")) == 0)
+        {
+            pstrValue = GetText();
+        }
+        else if (_tcscmp(pstrName, _T("visible")) == 0)
+        {
+            if (IsVisible()) {
+                pstrValue = _T("true");
+            }
+            else {
+                pstrValue = _T("false");
+            }
+        }
+        else if (_tcscmp(pstrName, _T("enabled")) == 0)
+        {
+            if (IsEnabled()) {
+                pstrValue = _T("true");
+            }
+            else {
+                pstrValue = _T("false");
+            }
+        }
+        return pstrValue;
+    }
+
 	void CControlUI::SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue)
 	{
 		// 样式表

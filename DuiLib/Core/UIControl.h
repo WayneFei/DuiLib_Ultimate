@@ -181,6 +181,7 @@ namespace DuiLib {
 		bool RemoveCustomAttribute(LPCTSTR pstrName);
 		void RemoveAllCustomAttribute();
 
+        virtual CDuiString GetAttribute(LPCTSTR pstrName);
 		virtual void SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue);
 		CControlUI* ApplyAttributeList(LPCTSTR pstrList);
 

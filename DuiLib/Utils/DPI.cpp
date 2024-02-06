@@ -77,7 +77,7 @@ namespace DuiLib
 
 	PROCESS_DPI_AWARENESS CDPI::GetDPIAwareness()
 	{
-		if (IsWindows8Point1OrGreater()) {
+		if (IsWindows7OrGreater()) {
 			HMODULE hModule =::LoadLibrary(_T("Shcore.dll"));
 			if(hModule != NULL) {
 				LPGetProcessDpiAwareness GetProcessDpiAwareness = (LPGetProcessDpiAwareness)GetProcAddress(hModule, "GetProcessDpiAwareness");
@@ -95,7 +95,7 @@ namespace DuiLib
 	BOOL CDPI::SetDPIAwareness(PROCESS_DPI_AWARENESS Awareness)
 	{
 		BOOL bRet = FALSE;
-		if (IsWindows8Point1OrGreater()) {
+		if (IsWindows7OrGreater()) {
 			HMODULE hModule =::LoadLibrary(_T("Shcore.dll"));
 			if(hModule != NULL) {
 				LPSetProcessDpiAwareness SetProcessDpiAwareness = (LPSetProcessDpiAwareness)GetProcAddress(hModule, "SetProcessDpiAwareness");
